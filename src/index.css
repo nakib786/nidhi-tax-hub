@@ -8,47 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 30% 98%;
-    --foreground: 222 47% 11%;
+    --background: 270 20% 10%;
+    --foreground: 270 10% 95%;
 
-    --card: 221 83% 20%;
-    --card-foreground: 210 40% 98%;
+    --card: 280 30% 25%;
+    --card-foreground: 270 10% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 270 20% 15%;
+    --popover-foreground: 270 10% 95%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 280 60% 55%;
+    --primary-foreground: 270 10% 95%;
 
-    --secondary: 45 93% 58%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 280 40% 40%;
+    --secondary-foreground: 270 10% 95%;
 
-    --muted: 220 20% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 270 15% 18%;
+    --muted-foreground: 270 10% 65%;
 
-    --accent: 45 93% 58%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 280 60% 55%;
+    --accent-foreground: 270 10% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --border: 270 15% 25%;
+    --input: 270 15% 25%;
+    --ring: 280 60% 55%;
 
     --radius: 0.5rem;
     
-    --hero-dark: 220 25% 10%;
-    --hero-gradient: linear-gradient(135deg, hsl(220 25% 10%) 0%, hsl(221 83% 20%) 100%);
+    --hero-dark: 270 20% 8%;
+    --hero-gradient: linear-gradient(135deg, hsl(280 30% 25%) 0%, hsl(270 20% 10%) 100%);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-background: 270 20% 12%;
+    --sidebar-foreground: 270 10% 80%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 280 30% 25%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 270 15% 25%;
+    --sidebar-ring: 280 60% 55%;
   }
 
   .dark {
@@ -108,7 +108,7 @@ All colors MUST be HSL.
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(221 83% 40%) 100%);
+    background: linear-gradient(135deg, hsl(280 60% 55%) 0%, hsl(320 50% 60%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
