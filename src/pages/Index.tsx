@@ -5,6 +5,14 @@ import {
   Calculator, ArrowUp, ExternalLink, Star, CheckCircle2
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import BCLCLogo from "@/assets/BCLC.svg";
+import GatewayLogo from "@/assets/GatewayCasino.svg";
+import SunLifeLogo from "@/assets/SunLife.svg";
+import TRULogo from "@/assets/TRU.svg";
+import CALogo from "@/assets/CA.png";
+import GNDULogo from "@/assets/GNDU.png";
+import ChevronLogo from "@/assets/Chevron.svg";
+import DesktopLogos from "@/assets/idzHVJZSe1_logos.jpeg";
 
 // ─── Data ────────────────────────────────────────────────────────────────
 
@@ -18,7 +26,7 @@ const stats = [
 const experiences = [
   {
     company: "BCLC",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4e/BCLC_Logo.svg",
+    logo: BCLCLogo,
     role: "Accountant",
     period: "Oct 2022 – Present",
     location: "British Columbia, Canada",
@@ -32,7 +40,7 @@ const experiences = [
   },
   {
     company: "Gateway Casinos & Entertainment",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Gateway_Casinos_logo.svg",
+    logo: GatewayLogo,
     role: "Intermediate Financial Accountant",
     period: "Aug 2021 – Oct 2022",
     location: "British Columbia, Canada",
@@ -46,7 +54,7 @@ const experiences = [
   },
   {
     company: "Sun Life",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Sun_Life_Financial_Logo.svg",
+    logo: SunLifeLogo,
     role: "Financial Centre Administrator",
     period: "Jun 2021 – Aug 2021",
     location: "British Columbia, Canada",
@@ -58,7 +66,7 @@ const experiences = [
   },
   {
     company: "Chevron",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/22/Chevron_Logo.svg",
+    logo: ChevronLogo,
     role: "Senior Customer Service Representative",
     period: "May 2018 – Apr 2021",
     location: "British Columbia, Canada",
@@ -85,7 +93,7 @@ const experiences = [
 const education = [
   {
     school: "Thompson Rivers University",
-    logo: "https://www.tru.ca/__res/images/tru-logo-horizontal-white.svg",
+    logo: TRULogo,
     degree: "Accounting Diploma",
     honors: "Dean's List, With Distinction",
     period: "2018 – 2020",
@@ -93,7 +101,7 @@ const education = [
   },
   {
     school: "Guru Nanak Dev University, Amritsar",
-    logo: "https://upload.wikimedia.org/wikipedia/en/f/f3/Guru_Nanak_Dev_University_logo.png",
+    logo: GNDULogo,
     degree: "Bachelor of Commerce",
     honors: "Accounting & Finance",
     period: "2014 – 2017",
@@ -101,7 +109,7 @@ const education = [
   },
   {
     school: "The Institute of Chartered Accountants of India",
-    logo: "https://upload.wikimedia.org/wikipedia/en/0/03/ICAI_Logo.svg",
+    logo: CALogo,
     degree: "CPT (Common Proficiency Test)",
     honors: "",
     period: "2014",
@@ -109,7 +117,7 @@ const education = [
   },
   {
     school: "CPA Canada",
-    logo: "https://www.cpacanada.ca/themes/cpacanada/logo.svg",
+    logo: DesktopLogos,
     degree: "CPA Pathway – Accounting",
     honors: "In Progress",
     period: "Current",
@@ -267,36 +275,29 @@ const Index = () => {
   const navScrolled = scrollY > 60;
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden w-full">
 
       {/* ═══ NAVIGATION ═══ */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navScrolled
-            ? "py-3 glass border-b border-white/5 shadow-lg shadow-black/20"
-            : "py-5 bg-transparent"
-          }`}
+        className={`fixed z-50 transition-all duration-500 left-1/2 -translate-x-1/2 ${
+          navScrolled
+            ? "top-0 md:top-4 w-full md:w-auto md:max-w-fit px-6 md:px-4 py-3 md:py-2 glass-header md:rounded-full md:tubelight-glow shadow-xl md:shadow-primary/20 border-b border-white/5 md:border-none"
+            : "top-0 md:top-4 w-full md:w-auto md:max-w-fit px-6 md:px-4 py-5 md:py-2 glass-header md:rounded-full shadow-lg md:shadow-none"
+        }`}
       >
-        <div className="container px-6 mx-auto flex items-center justify-between max-w-6xl">
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-105">
-              <span className="text-primary font-bold text-sm font-display">NA</span>
-            </div>
-            <span className={`font-semibold text-lg tracking-tight transition-all duration-300 ${navScrolled ? "text-foreground" : "text-foreground/90"}`}>
-              Nidhi<span className="text-primary">.</span>
-            </span>
-          </button>
+        <div className="flex items-center justify-between md:justify-center w-full">
+          {/* Mobile Branding (Only visible on mobile) */}
+          <span className="md:hidden font-bold text-lg tracking-tight">
+            Nidhi<span className="text-primary">.</span>
+          </span>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav (Standard for PC) */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${activeSection === item.id
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === item.id
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                   }`}
@@ -306,31 +307,32 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger (Standard for Mobile) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-xl glass flex flex-col items-center justify-center gap-1.5 group"
+            className="md:hidden w-10 h-10 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all active:scale-95"
             aria-label="Toggle menu"
           >
-            <span className={`w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${mobileMenuOpen ? "opacity-0 scale-0" : ""}`} />
-            <span className={`w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`w-6 h-0.5 bg-foreground rounded-full transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`w-6 h-0.5 bg-foreground rounded-full transition-all duration-300 ${mobileMenuOpen ? "opacity-0 scale-0" : ""}`} />
+            <span className={`w-6 h-0.5 bg-foreground rounded-full transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-500 overflow-hidden ${mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}`}>
-          <div className="container px-6 mx-auto py-4 space-y-1">
+        {/* Mobile Menu Dropdown */}
+        <div className={`md:hidden transition-all duration-500 overflow-hidden ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
+          <div className="mt-4 pb-4 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${activeSection === item.id
+                className={`w-full flex items-center justify-between px-4 py-4 rounded-2xl text-sm font-semibold transition-all duration-300 ${activeSection === item.id
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                   }`}
               >
                 {item.label}
+                <ChevronRight className={`w-4 h-4 transition-transform ${activeSection === item.id ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}`} />
               </button>
             ))}
           </div>
@@ -339,7 +341,7 @@ const Index = () => {
 
 
       {/* ═══ HERO ═══ */}
-      <section id="about" className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden pt-20">
+      <section id="about" className="relative min-h-screen flex flex-col items-center justify-start pt-24 sm:pt-32 hero-gradient overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 dot-grid opacity-40" />
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-float" />
@@ -362,7 +364,7 @@ const Index = () => {
 
             {/* Name */}
             <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <h1 className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-extrabold tracking-tight leading-none">
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-extrabold tracking-tight leading-none px-4">
                 <span className="text-foreground">Nidhi</span>
                 <br className="sm:hidden" />
                 <span className="text-gradient"> Arora</span>
@@ -469,11 +471,11 @@ const Index = () => {
                     </div>
                     <h3 className="font-bold text-lg text-foreground">{category.title}</h3>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 text-muted-foreground border border-white/5 hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all duration-300 cursor-default"
+                        className="px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-[10px] sm:text-xs font-medium bg-white/5 text-muted-foreground border border-white/5 hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all duration-300 cursor-default"
                       >
                         {skill}
                       </span>
@@ -512,7 +514,11 @@ const Index = () => {
                       <div className="flex items-center gap-4 mb-4">
                         {exp.logo ? (
                           <div className="w-12 h-12 rounded-xl bg-white overflow-hidden flex items-center justify-center shrink-0 border border-white/10">
-                            <img src={exp.logo} alt={exp.company} className="w-10 h-10 object-contain" />
+                            <img 
+                              src={exp.logo} 
+                              alt={exp.company} 
+                              className={`w-10 h-10 object-contain ${exp.logo === ChevronLogo ? "brightness-0" : ""}`} 
+                            />
                           </div>
                         ) : (
                           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
@@ -579,7 +585,11 @@ const Index = () => {
                   <div className="flex items-center gap-4 mb-4">
                     {edu.logo ? (
                       <div className="w-12 h-12 rounded-xl bg-white overflow-hidden flex items-center justify-center shrink-0 border border-white/10">
-                        <img src={edu.logo} alt={edu.school} className="w-10 h-10 object-contain" />
+                        <img 
+                          src={edu.logo} 
+                          alt={edu.school} 
+                          className={`w-10 h-10 object-contain ${edu.logo === TRULogo ? "brightness-0" : ""}`} 
+                        />
                       </div>
                     ) : (
                       <div className="absolute -top-4 -right-4 text-5xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 group-hover:scale-110 transform">
@@ -717,9 +727,6 @@ const Index = () => {
         <div className="container px-6 mx-auto max-w-6xl">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
-                <span className="text-primary font-bold text-xs">NA</span>
-              </div>
               <span className="text-sm text-muted-foreground">
                 © {new Date().getFullYear()} Nidhi Arora
               </span>
@@ -742,6 +749,11 @@ const Index = () => {
                 <Mail className="w-4 h-4" />
               </a>
             </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-[10px] text-muted-foreground/40 font-medium tracking-wide">
+              Logos used in this portfolio are the property of their respective brands and owners.
+            </p>
           </div>
         </div>
       </footer>
